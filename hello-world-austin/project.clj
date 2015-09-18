@@ -17,3 +17,9 @@
   :clean-targets ["out" "release"]
   :target-path "target"
   :profiles {:dev {:plugins [[com.cemerick/austin "0.1.7-SNAPSHOT"]]}})
+
+; Notes:
+; - Austin itself has a transitive dependency on an older version of
+;   Clojurescript. This causes errors related to the fact that
+;   in recent Clojurescript versions, cljs.repl/repl* automatically
+;   refers cljs.pprint/pprint, which was only recently added.
